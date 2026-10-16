@@ -4,7 +4,7 @@ service: api-alumnos
 provider:
   name: aws
   runtime: python3.12
-  timeout: 30  
+  timeout: 30
   iam:
     role: arn:aws:iam::193025579155:role/LabRole
 
@@ -17,7 +17,8 @@ functions:
           method: post
           cors: true
           integration: lambda
-crear:
+
+  crear:
     handler: CrearAlumno.lambda_handler
     events:
       - http:
@@ -25,5 +26,3 @@ crear:
           method: post
           cors: true
           integration: lambda
-
-
